@@ -157,6 +157,8 @@ Ember.ListView = Ember.ContainerView.extend(Ember.ListViewMixin, {
       // if the list is currently displaying the emptyView, remove the height
       if (this._isChildEmptyView()) {
           height = '';
+      } else if (this.get('css.position') === 'absolute') {
+          height = '';
       } else {
           height = get(this, 'totalHeight');
       }

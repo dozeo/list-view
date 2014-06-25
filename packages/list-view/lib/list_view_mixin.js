@@ -170,8 +170,10 @@ Ember.ListViewMixin = Ember.Mixin.create({
 
     style = '';
 
-    if (height) { style += 'height:' + height + 'px;'; }
-    if (width)  { style += 'width:'  + width  + 'px;'; }
+    if (css.position !== 'absolute') {
+      if (height) { style += 'height:' + height + 'px;'; }
+      if (width)  { style += 'width:'  + width  + 'px;'; }
+    }
 
     for ( var rule in css ){
       if (css.hasOwnProperty(rule)) {
